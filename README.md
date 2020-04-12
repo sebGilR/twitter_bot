@@ -2,32 +2,22 @@
 
 > Description here
 
-- Original: 
+- Original:
 
 ![screenshot](UPDATE)
 
 ## Built With
 
-- HTML5, CSS3
-- Flexbox
-
-## Live Demo
-
-[Live Demo Link](UPDATE)
+- Ruby
+- Twitter gem
 
 ## Authors
 
-👤 **Author1**
+👤 **Sebastian Gil Rodriguez**
 
-- Github: [@UPDATE](https://github.com/UPDATE)
-- Twitter: [@UPDATE](https://twitter.com/UPDATE)
-- Linkedin: [linkedin](UPDATE)
-
-👤 **Author2**
-
-- Github: [@lBuggie](https://github.com/lBuggie)
+- Github: [@sebGilR](https://github.com/sebGilR)
 - Twitter: [@sebGilR](https://twitter.com/sebGilR)
-- Linkedin: [linkedin](https://www.linkedin.com/in/sebastian-gil-rodriguez-9b776073)
+- Linkedin: [linkedin](https://www.linkedin.com/in/sebastiangilrodriguez)
 
 ## 🤝 Contributing
 
@@ -41,4 +31,4 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- 
+- Twitter Gem

@@ -8,16 +8,14 @@ class TwitterBot
 
   def initialize
     @client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = CONSUMER_KEY
-      config.consumer_secret     = CONSUMER_SECRET
-      config.access_token        = ACCESS_TOKEN
+      config.consumer_key = CONSUMER_KEY
+      config.consumer_secret = CONSUMER_SECRET
+      config.access_token = ACCESS_TOKEN
       config.access_token_secret = ACCESS_TOKEN_SECRET
     end
     @tweets = []
     @curated = @tweets.sample
   end
-
-  
 
   def get_tweets(keyword)
     puts 'Retrieving tweets...'
@@ -27,15 +25,13 @@ class TwitterBot
   end
 
   def fix_results(keyword)
-    if @tweets == []
-      @tweets = @client.search("#{keyword} -government -rt", lang: 'en', result_type: 'recent').take(15)
-    end
+    @tweets = @client.search("#{keyword} -government -rt", lang: 'en', result_type: 'recent').take(15) if @tweets == []
   end
 
   def like
     puts 'Liking...'
     @tweets.each do |tweet|
-      @client.favorite(tweet) if !(tweet.text =~ /free|free course|click/i)
+      @client.favorite(tweet) unless tweet.text =~ /free|free course|click/i
       sleep 1
     end
   end
@@ -43,7 +39,7 @@ class TwitterBot
   def retweet
     puts 'Retweeting found posts...'
     @tweets.each do |tweet|
-      @client.retweet(tweet) if tweet.user.followers_count >= 20 && !(tweet.text =~ /free|free course|click/i)
+      @client.retweet(tweet) unless tweet.user.followers_count <= 20 && (tweet.text =~ /free|free course|click/i)
       sleep 1
     end
   end
@@ -62,5 +58,3 @@ class TwitterBot
     @tweets = []
   end
 end
-
-

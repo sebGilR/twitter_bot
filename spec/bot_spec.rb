@@ -31,18 +31,18 @@ RSpec.describe TwitterBot do
       bot_dbl.follow
     end
   end
-  
+
   describe '#reset' do
     it 'empties the saved tweets' do
       expect(bot_dbl).to receive(:reset).and_return([])
       bot_dbl.reset
     end
   end
-  
+
   describe '#fix_results' do
     it 'returns array with latest if popular results are not found' do
-      expect(bot_dbl).to receive(:fix_results).and_return(['busy', 'array'])
+      expect(bot_dbl).to receive(:fix_results).and_return(%w[busy array])
       bot_dbl.fix_results
     end
-  end 
+  end
 end

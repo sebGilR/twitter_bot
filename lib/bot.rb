@@ -4,7 +4,6 @@ require_relative 'config'
 class TwitterBot
   include Config
   attr_reader :tweets
-  attr_reader :curated
 
   def initialize
     @client = Twitter::REST::Client.new do |config|
@@ -14,7 +13,6 @@ class TwitterBot
       config.access_token_secret = ACCESS_TOKEN_SECRET
     end
     @tweets = []
-    @curated = @tweets.sample
   end
 
   def get_tweets(keyword)

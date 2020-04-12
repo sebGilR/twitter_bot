@@ -13,7 +13,7 @@ The objective of this bot is to "automatically" generate interaction in your twi
 1. Clone/download the repo and open the terminal in the project folder.
 2. Execute "gem install twitter".
 3. Set up a twitter developer account and create an app there. ([How to](https://www.extly.com/docs/autotweetng_joocial/tutorials/how-to-auto-post-from-joomla-to-twitter/apply-for-a-twitter-developer-account/#apply-for-a-developer-account))
-4. Go to the lib/config.rb file and enter your keys from our twitter app.
+4. Go to the lib/config.rb file and enter your keys from your twitter app.
 5. Run "ruby bin/main.rb" from the project folder.
 
 ## Expected program flow

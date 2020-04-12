@@ -1,7 +1,8 @@
 require 'twitter'
-require 'config'
+require_relative 'config'
 
 class TwitterBot
+  attr_reader :tweets
   include Config
   def initialize
     @client = Twitter::REST::Client.new do |config|
@@ -13,7 +14,7 @@ class TwitterBot
     @tweets = []
   end
 
-  def get_tweets(topic)
-    @tweets = @client.search("#{topic}", result_type: 'popular').take(5)
+  def get_tweets(keyword)
+    @tweets = @client.search("#{keyword}", result_type: 'popular').take(5)
   end
 end

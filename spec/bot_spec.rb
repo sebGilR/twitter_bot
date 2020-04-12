@@ -27,7 +27,8 @@ RSpec.describe TwitterBot do
 
   describe '#follow' do
     it 'follows the author of a tweet' do
-
+      expect(bot_dbl).to receive(:follow).and_return('success')
+      bot_dbl.follow
     end
   end
   

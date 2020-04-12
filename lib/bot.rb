@@ -13,6 +13,7 @@ class TwitterBot
       config.access_token_secret = ACCESS_TOKEN_SECRET
     end
     @tweets = []
+    @curated = @tweets.sample
   end
 
   def get_tweets(keyword)
@@ -25,6 +26,10 @@ class TwitterBot
 
   def retweet
     @tweets.each { |tweet| @client.retweet(tweet) }
+  end
+
+  def follow
+    @client.follow(@curated.user)
   end
 end
 

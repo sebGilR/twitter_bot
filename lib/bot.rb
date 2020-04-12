@@ -21,10 +21,10 @@ class TwitterBot
     puts 'Retrieving tweets...'
     sleep 1
     @tweets = @client.search("#{keyword} -rt", lang: 'en', result_type: 'popular', count: 100).take(5)
-    fix_results(keyword)
+    alt_results(keyword)
   end
 
-  def fix_results(keyword)
+  def alt_results(keyword)
     @tweets = @client.search("#{keyword} -government -rt", lang: 'en', result_type: 'recent').take(15) if @tweets == []
   end
 

@@ -3,7 +3,6 @@ require_relative 'config'
 
 class TwitterBot
   include Config
-  attr_reader :tweets
 
   def initialize
     @client = Twitter::REST::Client.new do |config|
@@ -14,6 +13,8 @@ class TwitterBot
     end
     @tweets = []
   end
+
+  private
 
   def get_tweets(keyword)
     puts 'Retrieving tweets...'
@@ -51,8 +52,22 @@ class TwitterBot
   end
 
   def reset
-    puts 'Process finished, will restart in 6 hours.'
-    puts 'Press CTRL + C to abort now.'
+    puts "\nProcess finished, it will restart in 6 hours."
+    puts "\n\tPress CTRL + C to abort now."
     @tweets = []
+  end
+
+  public
+
+  def run(topic)
+    loop do
+      get_tweets(topic)
+      @tweets.each { |tweet| puts tweet.full_text + "\n\t ------------" }
+      like
+      retweet
+      follow
+      reset
+      sleep 21_600
+    end
   end
 end

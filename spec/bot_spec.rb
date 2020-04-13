@@ -1,4 +1,3 @@
-require 'twitter'
 require_relative '../lib/bot.rb'
 
 RSpec.describe TwitterBot do
@@ -39,7 +38,7 @@ RSpec.describe TwitterBot do
     end
   end
 
-  describe '#fix_results' do
+  describe '#alt_results' do
     it 'returns array with latest if popular results are not found' do
       expect(bot_dbl).to receive(:fix_results).and_return(%w[busy array])
       bot_dbl.fix_results

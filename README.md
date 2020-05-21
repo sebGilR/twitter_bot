@@ -4,6 +4,11 @@
 
 The objective of this bot is to "automatically" generate interaction in your twitter account to make networking easy. If your interest is software development, setting up the bot to interact with such topic will grow your network by finding posts and people related to this subject. When interacting with these people's posts and following them they are likely to do the same with you.
 
+## Potential features
+
+- Having the bot run a maintenance check on the profile to unfollow any inactive users.
+- Have a setup prompt to authenticate the user for the API.
+
 ## Prerequisites
 
 - Ruby 2.4 or newer

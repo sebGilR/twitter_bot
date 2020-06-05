@@ -2,7 +2,11 @@
 
 > This is a Twitter bot built in Ruby using the Twitter API (through the Twitter gem). It likes, retweets and follows the poster of a number of retrieved tweets and will repeat this action after 6 hours.
 
-The objective of this bot is to "automatically" generate interaction in your twitter account to make networking easy. If your interest is software development, setting up the bot to interact with such topic will grow your network by finding posts and people related to this subject. When interacting with these people's posts and following them they are likely to do the same with you.
+The objective of this bot is to "automatically" generate interaction in your twitter account to make networking easy. If your interest is software development, setting up the bot to interact with the given topic will grow your network by finding posts and people related to this subject. When interacting with these people's posts and following them they are likely to do the same with you.
+
+## Screenshot
+
+![Screenshot](screenshot.png)
 
 ## Potential features
 
